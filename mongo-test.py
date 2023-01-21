@@ -37,4 +37,4 @@ cat = CatBreed(
 
 cat.save()
 
-print(cat)
+print(cat.to_json())

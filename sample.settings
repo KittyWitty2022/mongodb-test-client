@@ -1,7 +1,4 @@
-FLASK_APP = app.py
-FLASK_DEBUG = True
 DB = activities
-DB_USER = test_user
-DB_PASSWORD = Q9AQtD3aX3xzRrXdWatY8NGC
-DB_HOST = mongodb+srv://cluster0.0up9d.mongodb.net
-SLEEP_TIME = 0
+DB_USER = your-user-here
+DB_PASSWORD = your-password-here
+DB_HOST = mongodb+srv://your-cloud-mongo-host-here
