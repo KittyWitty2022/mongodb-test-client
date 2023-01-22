@@ -19,7 +19,7 @@ connect(
     retryWrites=False,
 )
 
-# Declaration of a mongo schema
+
 class CatBreed(Document):
     breed = StringField(required=True, max_length=64)
     style = StringField(max_length=255)
@@ -27,14 +27,20 @@ class CatBreed(Document):
     last_updated = DateTimeField()
 
 
-# This is the code that will go into our POST
 cat = CatBreed(
-    breed='Siamese',
-    style='Sassy',
-    last_updated=datetime.datetime.utcnow(),
-    sub_species_count=5
+    breed="Siamese",
+    style="Sassy",
+    last_updated=datetime.datetime.now(datetime.timezone.utc),
+    sub_species_count=5,
 )
 
 cat.save()
 
 print(cat.to_json())
+
+d = cat.to_mongo().to_dict()
+
+print(f"As a dictionary: {d}")
+d["id"] = str(d["_id"])
+d.pop("_id")
+print(f"As a dictionary: {d}")
